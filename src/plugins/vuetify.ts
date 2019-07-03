@@ -4,6 +4,9 @@ import '@/assets/style/stylus/main.styl'
 
 Vue.use(Vuetify, {
   iconfont: 'md',
+  theme: {
+    primary: '#ed1847',
+  },
   icons: {
     icon_sun: 'icon-sun',
     icon_sign_out: 'icon-sign-out',

@@ -10,12 +10,13 @@
 
         <v-divider></v-divider>
 
-        <v-list dense class="pt-0">
+        <v-list>
             <v-list-tile
                     v-for="item in items"
                     :key="item.title"
                     :to="item.to"
-                    class="app-list-tile"
+                    class="app-inactive-list-tile"
+                    active-class="app-active-list-tile"
             >
                 <v-list-tile-action>
                     <v-icon>{{ item.icon }}</v-icon>
@@ -47,7 +48,20 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss">
+    .app-inactive-list-tile {
+        color: rgba(white, 0.3);
+        .v-icon {
+            color: rgba(white, 0.3);
+        }
+    }
+    .app-active-list-tile {
+        border-right: 2px solid #ed1847;
+        color: white;
+        .v-icon {
+            color: white
+        }
+    }
     .app-sidebar {
         background-color: #1e2037 !important;
     }
