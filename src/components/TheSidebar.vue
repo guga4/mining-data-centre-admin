@@ -14,7 +14,8 @@
             <v-list-tile
                     v-for="item in items"
                     :key="item.title"
-                    @click=""
+                    :to="item.to"
+                    class="app-list-tile"
             >
                 <v-list-tile-action>
                     <v-icon>{{ item.icon }}</v-icon>
@@ -33,13 +34,13 @@
       data () {
         return {
           items: [
-            {title: 'Dashboard', icon: 'icon-home'},
-            {title: 'My profile', icon: 'icon-user'},
-            {title: 'Current debt', icon: 'icon-alert-triangle'},
-            {title: 'Transactions history', icon: 'icon-bookmark'},
-            {title: 'My miners info', icon: 'icon-alert-circle'},
-            {title: 'Referral system', icon: 'icon-reverse-arrows'},
-            {title: 'Agreement', icon: 'icon-document'},
+            {title: 'Dashboard', icon: 'icon-home', to: {name: 'Dashboard'}},
+            {title: 'My profile', icon: 'icon-user', to: {name: 'Profile'}},
+            {title: 'Current debt', icon: 'icon-alert-triangle', to: {name: 'CurrentDept'}},
+            {title: 'Transactions history', icon: 'icon-bookmark', to: {name: 'TransactionsHistory'}},
+            {title: 'My miners info', icon: 'icon-alert-circle', to: {name: 'MinersInfo'}},
+            {title: 'Referral system', icon: 'icon-reverse-arrows', to: {name: 'ReferralSystem'}},
+            {title: 'Agreement', icon: 'icon-document', to: {name: 'Agreement'}},
           ],
         }
       }

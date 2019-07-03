@@ -18,9 +18,39 @@ export default new Router({
       redirect: '/referral-system',
       children: [
         {
+          path: '/dashboard',
+          name: 'Dashboard',
+          component: Full,
+        },
+        {
+          path: '/profile',
+          name: 'Profile',
+          component: Full,
+        },
+        {
+          path: '/current-debt',
+          name: 'CurrentDept',
+          component: Full,
+        },
+        {
+          path: '/transactions-history',
+          name: 'TransactionsHistory',
+          component: Full,
+        },
+        {
+          path: '/miners-info',
+          name: 'MinersInfo',
+          component: Full,
+        },
+        {
           path: '/referral-system',
           name: 'ReferralSystem',
           component: ReferralSystem,
+        },
+        {
+          path: '/agreement',
+          name: 'Agreement',
+          component: Full,
         },
       ]
     },
