@@ -1,5 +1,5 @@
 <template>
-    <v-toolbar height="100" color="white" fixed style="padding-left: 300px">
+    <v-toolbar height="100" color="white" fixed style="padding-left: 300px" class="elevation-0">
         <v-list style="margin-left: -15px" two-line>
             <v-list-tile
                     avatar

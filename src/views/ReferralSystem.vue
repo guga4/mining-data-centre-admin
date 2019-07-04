@@ -1,39 +1,45 @@
 <template>
     <v-container fluid>
-        <v-card class="w-100 ttt">
-            <v-card-title><h2>Converter calculator</h2></v-card-title>
+        <v-card class="w-100 elevation-0">
+            <v-card-title><h1>Converter calculator</h1></v-card-title>
             <v-card-text>
                 <v-layout>
                     <v-flex md4>
                         <v-text-field
                                 v-model="converter.currency_btc"
-                                label="BTC"
                                 type="number"
                                 placeholder="0.00"
-                        ></v-text-field>
+                        >
+                            <span class="grey--text" slot="append">
+                                BTC
+                            </span>
+                        </v-text-field>
                     </v-flex>
-                    <v-flex md4 class="text-center">
+                    <v-flex md4 style="text-align: center">
                         <v-btn fab color="primary"
                                @click="storeTransactionHistory"
                                :loading="converter.loading"
                                :disabled="converter.loading"
                         >
-                            <v-icon>autorenew</v-icon>
+                            <v-icon>icon-reverse-arrows</v-icon>
                         </v-btn>
                     </v-flex>
                     <v-flex md4>
                         <v-text-field
                                 v-model="converter.currency_gel"
-                                label="GEL"
                                 type="number"
                                 placeholder="0.00"
-                        ></v-text-field>
+                        >
+                            <span class="grey--text" slot="append">
+                                GEL
+                            </span>
+                        </v-text-field>
                     </v-flex>
                 </v-layout>
             </v-card-text>
         </v-card>
-        <v-card class="mt-4">
-            <v-card-title><h2>Transaction history</h2></v-card-title>
+        <v-card class="mt-4 elevation-0">
+            <v-card-title><h1>Transaction history</h1></v-card-title>
             <v-card-text>
                 <v-data-table
                         :headers="transaction_history.headers"
@@ -46,21 +52,31 @@
                         <td>{{ props.item.id }}</td>
                         <td>{{ 'test' }}</td>
                         <td>{{ formatDate(props.item.created_at) }}</td>
-                        <td>{{ props.item.rate }}</td>
+                        <td>{{ props.item.rate }} <span class="grey--text text--darken-1">BTC</span></td>
                     </template>
                 </v-data-table>
+            </v-card-text>
+        </v-card>
+        <v-card class="mt-4 elevation-0">
+            <v-card-title><h1>About Referral System</h1></v-card-title>
+            <v-card-title class="grey--text text--darken-1">
+                Lorem ipsum dolor sit amet want knowing faithful, should clings
+                Lorem ipsum dolor sit amet want knowing faithful, should clings
+                Lorem ipsum dolor sit amet want knowing faithful, should clings
+                Lorem ipsum dolor sit amet want knowing faithful, should clings
+                Lorem ipsum dolor sit amet want knowing faithful, should clings
+            </v-card-title>
+            <v-card-text class="grey--text text--darken-1">
+                <v-icon color="grey" class="mr-1" small>icon-globe</v-icon>
+                Referral link: <a href="https://admin.miningcenter2018.com/login" target="_blank">https://admin.miningcenter2018.com/login</a>
             </v-card-text>
         </v-card>
     </v-container>
 </template>
 
 <script>
-  import axios from 'axios'
+  import {api} from "../api";
   import moment from 'moment'
-
-  const api = axios.create({
-    baseURL: process.env.MIX_API_URL
-  })
 
   export default {
     name: 'App',
@@ -80,7 +96,7 @@
           pagination: {},
           headers: [
             {
-              text: 'ID',
+              text: '#',
               align: 'left',
               sortable: false,
               value: 'id'

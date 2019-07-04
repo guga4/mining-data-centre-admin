@@ -1,14 +1,12 @@
 <template>
     <v-navigation-drawer class="app-sidebar" dark permanent fixed>
-        <v-toolbar height="100" flat dark class="app-home">
+        <v-toolbar height="100" flat dark class="app-home elevation-0">
             <v-list>
                 <v-list-tile>
                     <img src="../assets/img/logo.png">
                 </v-list-tile>
             </v-list>
         </v-toolbar>
-
-        <v-divider></v-divider>
 
         <v-list>
             <v-list-tile
@@ -27,6 +25,9 @@
                 </v-list-tile-content>
             </v-list-tile>
         </v-list>
+        <v-footer class="ml-3 py-4 app-sidebar align-center app-footer" inset app>
+            <span style="font-size: 1.7em" class="mr-2 app-inactive-list-tile">©</span> <span class="app-inactive-list-tile">Copyright, 2018</span>
+        </v-footer>
     </v-navigation-drawer>
 </template>
 
@@ -49,6 +50,10 @@
 </script>
 
 <style lang="scss">
+    .app-footer {
+        border-top: 0.7px solid rgba(white, 0.3);
+        box-sizing: content-box
+    }
     .app-inactive-list-tile {
         color: rgba(white, 0.3);
         .v-icon {

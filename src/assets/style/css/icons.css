@@ -24,14 +24,14 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-globe:before {
+    content: "\e90d";
+}
 .icon-sun:before {
     content: "\e900";
 }
 .icon-sign-out:before {
     content: "\e901";
-}
-.icon-inbox:before {
-    content: "\e902";
 }
 .icon-bell:before {
     content: "\e903";
@@ -62,4 +62,7 @@
 }
 .icon-alert-triangle:before {
     content: "\e90c";
+}
+.icon-inbox:before {
+    content: "\e902";
 }

@@ -8,6 +8,7 @@ Vue.use(Vuetify, {
     primary: '#ed1847',
   },
   icons: {
+    icon_globe: 'icon-globe',
     icon_sun: 'icon-sun',
     icon_sign_out: 'icon-sign-out',
     icon_inbox: 'icon-inbox',
